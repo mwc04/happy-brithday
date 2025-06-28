@@ -139,19 +139,12 @@
                 </div>
                 <div class="card2">
                     <div class="card2-content">
-                        <h3>Gửi Đến MIA!</h3>
-                        <h2>Anh chúc em tuổi 20 thật rực rỡ, như ngọn lửa bùng cháy với những ước mơ lớn lao,
-                             khát khao mãnh liệt và bản lĩnh để vượt qua mọi sóng gió đầu đời. Tuổi 20 là bức
-                              tranh cuộc sống để em tự tay vẽ nên bằng những gam màu đam mê, sự kiên cường và
-                               tình yêu dành cho chính mình. Hãy cứ mơ lớn, sống hết mình, yêu chân thành và 
-                               luôn tin rằng những điều tốt đẹp nhất đang chờ em ở phía trước. Chúc em một sinh
-                                nhật thật ý nghĩa, ngập tràn niềm vui, những khoảnh khắc đáng nhớ bên những người
-                                 yêu thương. Anh luôn ở đây, sẵn sàng ủng hộ em bất cứ khi nào em cần!
-                                 <img src="images/mewmew.gif" width="40px" height="40px" alt="">
-                        </h2>
-
+                        <div class="card2-content">
+                        <h3 class="title__letter"></h3>
+                        <div class="text__letter"><p></p></div>
+                        <img id="mewmew" src="images/mewmew.gif" width="50">
                         <div class="imageCute2">
-                            <img src="images/anhmeothatim.gif" alt="">
+                            <img src="images/mewmew.gif" alt="">
                         </div>
                     </div>
                 </div>
@@ -162,7 +155,7 @@
 </body>
 <script>
     let datetxt = "29 June";
-    let datatxtletter = "Chúc em tuổi mới với thật nhiều niềm vui, sức khỏe,và luôn giữ gìn sức khoẻ nha, chúc em luôn hạnh phúc vui vẻ luôn xinh đẹp toả sáng nha";
+    let datatxtletter = "Chúc em tuổi 20 rực rỡ! Đây là thời điểm để em cháy hết mình, đuổi theo những giấc mơ lớn, sống thật vui và yêu bản thân thật nhiều. Mong ngày sinh nhật này em cười tít mắt 😄, quây quần bên người thương, bạn bè, và có những kỷ niệm đáng nhớ 🎉. Cứ mạnh dạn bước tới, vấp ngã thì đứng lên, anh luôn ủng hộ em 🤗! Chúc em sinh nhật siêu vui, và cả hành trình tuổi 20 sẽ tràn đầy những điều bất ngờ tuyệt vời! 🎂🎁";
     let titleLetter = "Gửi Đến MIA";
     let charArrDate = datetxt.split('');
     let charArrDateLetter = datatxtletter.split('');
@@ -191,7 +184,7 @@
     var intervalContent;
     var intervalTitle;
     $("#btn__letter").on("click", function () {
-        $(".box__letter").slideDown()
+        $(".boxMail").addClass("active");
         setTimeout(function () {
             $(".letter__border").slideDown();
         }, 1000)
@@ -228,10 +221,10 @@
                 else {
                     clearInterval(intervalContent)
                 }
-            }, 20)
-        }, 1000)
+            }, 50)
+        }, 6000)
     })
-    $(".close").on("click", function () {
+    $(".fa-xmark").on("click", function () {
         clearInterval(intervalContent)
         document.querySelector(".title__letter").textContent = "";
         text__letter.textContent = "";
@@ -243,8 +236,7 @@
         document.querySelectorAll(".heart").forEach((item) => {
             item.classList.remove("animation")
         })
-        $(".box__letter").slideUp();
-        $(".letter__border").slideUp();
+$(".boxMail").removeClass("active");
     })
 
 
